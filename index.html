@@ -7,8 +7,10 @@
 
   <h1>Sikke et flot billede</h1>
  
-   <button onclick="var hey = setInterval(lyn,500);">On!</button>
-   <button onclick="Puck.write('LED1.reset();\n');">Off!</button>
+   <button onclick="Puck.write('var hey = setInterval(lyn,500);\n');">On!</button>
+   <button onclick="Puck.write('clearInterval(hey);\n');">Off!</button>
+  
+  
   <script src="https://www.puck-js.com/puck.js">
     
     setWatch(function(){},BTN,{edge:"rising",debounce:50,repeat:true});
