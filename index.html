@@ -7,9 +7,23 @@
 
   <h1>Sikke et flot billede</h1>
  
-   <button onclick="Puck.write('LED1.set();\n');">On!</button>
+   <button onclick="var hey = setInterval(lyn,500);">On!</button>
    <button onclick="Puck.write('LED1.reset();\n');">Off!</button>
   <script src="https://www.puck-js.com/puck.js">
+    
+    setWatch(function(){},BTN,{edge:"rising",debounce:50,repeat:true});
+    function lyn() {
+var farve = Math.round(Math.random()*2);
+if (farve === 0) {
+digitalPulse(LED1,true,500);
+} else if (farve === 1) {
+digitalPulse(LED2,true,500);
+} else if (farve === 2) {
+digitalPulse(LED3,true,500);
+}
+}
+
+var hey = setInterval(lyn,500);
   </script>
 
 </body>
